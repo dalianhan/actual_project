@@ -1,30 +1,30 @@
 <template>
   <footer class="footer_guide">
-    <a href="javascript:;" class="footer_item" on>
+    <a href="javascript:;" class="footer_item" @click="goto('/msite')" :class="{on: $router.path === '/msite'}">
         <span class="item_icon">
             <i class="iconfont icon-shouye"></i>
         </span>
         <span>首页</span>
     </a>
-    <a href="javascript:;" class="footer_item">
+    <a href="javascript:;" class="footer_item" @click="goto('/category')" :class="{on: $router.path === '/category'}">
         <span class="item_icon">
             <i class="iconfont icon-fenlei"></i>
         </span>
         <span>分类</span>
     </a>
-    <a href="javascript:;" class="footer_item">
+    <a href="javascript:;" class="footer_item" @click="goto('/real')" :class="{on: $router.path === '/real'}">
         <span class="item_icon">
             <i class="iconfont icon-shiwutupian"></i>
         </span>
         <span>实物</span>
     </a>
-    <a href="javascript:;" class="footer_item">
+    <a href="javascript:;" class="footer_item" @click="goto('/cart')" :class="{on: $router.path === '/cart'}">
         <span class="item_icon">
             <i class="iconfont icon-gouwuche"></i>
         </span>
         <span class="cart">购物车</span>
     </a>
-    <a href="javascript:;" class="footer_item">
+    <a href="javascript:;" class="footer_item" @click="goto('/profile')" :class="{on: $router.path === '/profile'}">
         <span class="item_icon">
             <i class="iconfont icon-personnone"></i>
         </span>
@@ -35,6 +35,12 @@
 
 <script type="text/ecmascript-6">
   export default {
+      name:'footerGuide',
+      methods:{
+          goto(path){
+              this.$router.replace(path)
+          }
+      }
   }
 </script>
 
@@ -59,6 +65,7 @@
             flex-direction column
             align-items center
             text-align center
+            color #999999
             &.on
                 color #02a774
             .item_icon
@@ -71,17 +78,6 @@
                 font-size 24px
                 color #666
         
-                
-                
-                    
-
-                
-
-
-                
-
-
-
-
+            
  
 </style>

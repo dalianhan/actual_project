@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <router-view/>
     <footerGuide/>
   </div>
 </template>
@@ -7,6 +8,7 @@
 <script type="text/ecmascript-6">
   import footerGuide from './components/footerGuide/footerGuide.vue'
   export default {
+    name:'App',
     components:{
       footerGuide
     }
